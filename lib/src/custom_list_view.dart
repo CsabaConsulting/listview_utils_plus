@@ -49,7 +49,6 @@ class CustomListView<T> extends StatefulWidget {
     this.distanceToLoadMore = 200,
     this.listViewController,
     this.scrollController,
-    this.controller,
   })  : assert(adapter != null || itemCount != null),
         this.itemExtend = separatorBuilder == null ? itemExtend : null,
         super(key: key);
@@ -126,10 +125,6 @@ class CustomListView<T> extends StatefulWidget {
 
   /// Scroll controller
   final ScrollController? scrollController;
-
-  @Deprecated(
-      'The controller property has been deprecated. Use scrollController instead.')
-  final ScrollController? controller;
 
   @override
   CustomListViewState createState() => CustomListViewState();
@@ -374,7 +369,7 @@ class CustomListViewState extends State<CustomListView> {
       scrollDirection: widget.scrollDirection,
       shrinkWrap: widget.shrinkWrap,
       semanticChildCount: itemCount,
-      controller: widget.scrollController ?? widget.controller,
+      controller: widget.scrollController,
       physics: widget.physics,
       slivers: slivers.map((sliver) {
         int index = i++;

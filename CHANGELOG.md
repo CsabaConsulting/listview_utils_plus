@@ -3,3 +3,4 @@
 - Initial release
 - Fork [listview_utils](https://pub.dev/packages/listview_utils/)
 - Upgrade dependencies
+- Remove deprecated CustomListView.controller in favor of CustomListView.scrollController
