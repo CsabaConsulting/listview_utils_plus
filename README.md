@@ -16,6 +16,9 @@ in a Floor (SQLite wrapper) or Moor DB in a list and don't want to repeat paging
 half a dozen times throughout your app. But consider his advice, possibly he is right. I'm not at
 the point with my project currently to realize his point.
 
+I forked this plugin out of necessity and I have only a very limited time for maintenance, so PRs
+are highly welcome if any change is desired.
+
 ## Example
 
 ```dart
