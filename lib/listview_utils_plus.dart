@@ -1,4 +1,4 @@
-library listview_utils;
+library listview_utils_plus;
 
 export 'src/adapters/list_adapter.dart';
 export 'src/adapters/network_list_adapter.dart';

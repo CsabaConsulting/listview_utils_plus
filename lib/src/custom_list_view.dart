@@ -4,9 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../listview_utils.dart';
-import 'adapters/list_adapter.dart';
-import 'controller.dart';
+import '../listview_utils_plus.dart';
 import 'types.dart';
 
 enum PaginationMode {

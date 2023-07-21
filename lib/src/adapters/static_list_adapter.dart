@@ -1,4 +1,4 @@
-import 'package:listview_utils/listview_utils.dart';
+import '../../listview_utils_plus.dart';
 
 class StaticListAdapter<T> implements BaseListAdapter<T> {
   final Iterable<T> data;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:listview_utils/listview_utils.dart';
+import 'package:listview_utils_plus/listview_utils_plus.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('🔌 ListView_Utils')),
+      appBar: AppBar(title: Text('🔌 ListView Utils+')),
       body: SafeArea(
         child: CustomListView(
           paginationMode: PaginationMode.page,
