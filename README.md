@@ -1,7 +1,8 @@
 # 📜 listview_utils_plus
 
 [![pub package](https://img.shields.io/pub/v/listview_utils_plus.svg)](https://pub.dev/packages/listview_utils_plus)
-[![GitHub](https://img.shields.io/github/license/TheMisir/flutter-listutils)](https://github.com/CsabaConsulting/listview_utils_plus/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/CsabaConsulting/listview_utils_plus)](https://github.com/CsabaConsulting/listview_utils_plus/blob/master/LICENSE)
+![Null safety](https://img.shields.io/badge/null%20safety-true-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-web%20%7C%20android%20%7C%20ios-ff69b4)
 
 Supercharge `ListView` with custom adapters to add infinite scrolling.
