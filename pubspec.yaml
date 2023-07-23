@@ -1,6 +1,6 @@
 name: listview_utils_plus
 description: Infinite scrolling list view with multiple data source mode support using adapters. Also supports header, footer widgets.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/CsabaConsulting/listview_utils_plus
 
 environment:
