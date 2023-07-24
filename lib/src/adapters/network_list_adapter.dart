@@ -23,7 +23,8 @@ class NetworkListAdapter<T> implements BaseListAdapter<T> {
   })  : assert(disablePagination == true || limitParam != null),
         assert(disablePagination == true || offsetParam != null);
 
-  Future<T> _withClient<T>(Future<T> Function(BaseClient? client) fn) async {
+  Future<Response> _withClient(
+      Future<Response> Function(BaseClient? client) fn) async {
     if (client != null) {
       return await fn(client);
     } else {
@@ -50,7 +51,7 @@ class NetworkListAdapter<T> implements BaseListAdapter<T> {
       Iterable? items = json.decode(utf8.decode(response.bodyBytes));
       return ListItems(
         items as Iterable<T>?,
-        reachedToEnd: disablePagination == true || items!.length == 0,
+        reachedToEnd: disablePagination == true || items!.isEmpty,
       );
     } else {
       throw Exception('HTTP ${response.statusCode}: Failed to fetch');
@@ -68,7 +69,7 @@ class NetworkListAdapter<T> implements BaseListAdapter<T> {
 }
 
 ///
-///Generate full url by iterating over [url] to find path paramaters and then adding [params] to it
+///Generate full url by iterating over [url] to find path parameters and then adding [params] to it
 ///returns: [url] as a [String]
 String _generateUrl(String url, Map<String?, dynamic> params) {
   url += url.contains('?') ? '&' : '?';

@@ -7,8 +7,9 @@ class CustomListViewController {
   }
 
   _assertAttached() {
-    if (_state == null)
+    if (_state == null) {
       throw Exception('This controller is not attached to any CustomListView.');
+    }
   }
 
   /// Reloads the data while showing the loading indicator.

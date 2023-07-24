@@ -50,7 +50,7 @@ class CustomListView<T> extends StatefulWidget {
     this.listViewController,
     this.scrollController,
   })  : assert(adapter != null || itemCount != null),
-        this.itemExtend = separatorBuilder == null ? itemExtend : null,
+        itemExtend = separatorBuilder == null ? itemExtend : null,
         super(key: key);
 
   /// Pagination mode (offset / page)
@@ -135,8 +135,8 @@ enum _CLVStatus { idle, loading, error }
 class _CLVState {
   const _CLVState(this.status, [this.error]);
 
-  static const idle = const _CLVState(_CLVStatus.idle);
-  static const loading = const _CLVState(_CLVStatus.loading);
+  static const idle = _CLVState(_CLVStatus.idle);
+  static const loading = _CLVState(_CLVStatus.loading);
 
   static _CLVState createError(dynamic e) => _CLVState(_CLVStatus.error, e);
 
@@ -342,7 +342,7 @@ class CustomListViewState extends State<CustomListView> {
         } else if (itemCount == 0) {
           return widget.empty;
         } else {
-          return SizedBox();
+          return const SizedBox();
         }
       },
     );
@@ -385,16 +385,16 @@ class CustomListViewState extends State<CustomListView> {
   }
 
   @override
-  void didUpdateWidget(CustomListView old) {
-    super.didUpdateWidget(old);
-    if (old.listViewController != widget.listViewController &&
+  void didUpdateWidget(CustomListView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.listViewController != widget.listViewController &&
         widget.listViewController != null) {
       widget.listViewController!.attach(this);
     }
 
-    if (old.adapter != widget.adapter) {
-      if (old.adapter != null && widget.adapter != null) {
-        if (old.adapter!.shouldUpdate(widget.adapter) == false) {
+    if (oldWidget.adapter != widget.adapter) {
+      if (oldWidget.adapter != null && widget.adapter != null) {
+        if (oldWidget.adapter!.shouldUpdate(widget.adapter) == false) {
           return;
         }
       }

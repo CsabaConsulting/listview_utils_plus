@@ -12,7 +12,7 @@ class StaticListAdapter<T> implements BaseListAdapter<T> {
   @override
   Future<ListItems<T>> getItems(int offset, int limit) {
     if (disablePagination) {
-      return Future.value(ListItems(data, reachedToEnd: data.length == 0));
+      return Future.value(ListItems(data, reachedToEnd: data.isEmpty));
     } else {
       var items = data.skip(offset).take(limit).toList();
       return Future.value(ListItems(items, reachedToEnd: items.length < limit));

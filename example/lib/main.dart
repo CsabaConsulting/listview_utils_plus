@@ -4,7 +4,7 @@ import 'package:listview_utils_plus/listview_utils_plus.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    MaterialApp(
+    const MaterialApp(
       title: 'Example',
       home: HomeScreen(),
     ),
@@ -12,28 +12,30 @@ void main() {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('🔌 ListView Utils+')),
+      appBar: AppBar(title: const Text('🔌 ListView Utils+')),
       body: SafeArea(
         child: CustomListView(
           paginationMode: PaginationMode.page,
           initialOffset: 0,
           loadingBuilder: CustomListLoading.defaultBuilder,
-          header: Container(
+          header: const SizedBox(
             height: 50,
             child: Center(
               child: Text('😄 Header'),
             ),
           ),
-          footer: Container(
+          footer: const SizedBox(
             height: 50,
             child: Center(
               child: Text('🦶 Footer'),
             ),
           ),
-          adapter: NetworkListAdapter(
+          adapter: const NetworkListAdapter(
             url: 'https://jsonplaceholder.typicode.com/posts',
             limitParam: '_limit',
             offsetParam: '_start',
@@ -41,7 +43,7 @@ class HomeScreen extends StatelessWidget {
           itemBuilder: (context, _, item) {
             return ListTile(
               title: Text(item['title']),
-              leading: Icon(Icons.assignment),
+              leading: const Icon(Icons.assignment),
             );
           },
           errorBuilder: (context, error, state) {
@@ -50,15 +52,15 @@ class HomeScreen extends StatelessWidget {
                 Text(error.toString()),
                 TextButton(
                   onPressed: () => state.loadMore(),
-                  child: Text('Retry'),
+                  child: const Text('Retry'),
                 ),
               ],
             );
           },
           separatorBuilder: (context, _) {
-            return Divider(height: 1);
+            return const Divider(height: 1);
           },
-          empty: Center(
+          empty: const Center(
             child: Text('Empty'),
           ),
         ),

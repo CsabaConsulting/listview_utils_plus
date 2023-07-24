@@ -5,13 +5,14 @@ class CustomListLoading extends StatelessWidget {
   final double indicatorSize;
   final double strokeWidth;
 
-  static WidgetBuilder defaultBuilder = (context) => CustomListLoading();
+  static WidgetBuilder defaultBuilder = (context) => const CustomListLoading();
 
   const CustomListLoading({
+    Key? key,
     this.height = 100,
     this.indicatorSize = 20,
     this.strokeWidth = 3,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
