@@ -8,3 +8,7 @@
 ## [0.0.2] - 07/23/2023
 
 - README updates
+
+## [0.0.3] - 07/23/2023
+
+- Introducing linter and analyzer and fix reported issues by those
