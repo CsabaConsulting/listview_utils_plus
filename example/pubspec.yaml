@@ -28,7 +28,7 @@ dependencies:
     path: ../
 
 dev_dependencies:
-  analyzer: ^6.0.0
+  analyzer: ^6.2.0
   flutter_lints: ^2.0.2
   flutter_test:
     sdk: flutter
