@@ -11,10 +11,10 @@ dependencies:
     sdk: flutter
 
   # A composable, multi-platform, Future-based API for HTTP requests.
-  http: ^1.1.0
+  http: ^1.1.2
 
 dev_dependencies:
-  analyzer: ^6.2.0
-  flutter_lints: ^2.0.2
+  analyzer: ^6.3.0
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
