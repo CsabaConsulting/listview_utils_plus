@@ -12,3 +12,7 @@
 ## [0.0.3] - 07/23/2023
 
 - Introducing linter and analyzer and fix reported issues by those
+
+## [0.0.4] - 01/25/2025
+
+- Increase package versions
