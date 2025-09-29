@@ -2,11 +2,11 @@ import 'custom_list_view.dart';
 
 class CustomListViewController {
   CustomListViewState? _state;
-  attach(CustomListViewState state) {
+  void attach(CustomListViewState state) {
     _state = state;
   }
 
-  _assertAttached() {
+  void _assertAttached() {
     if (_state == null) {
       throw Exception('This controller is not attached to any CustomListView.');
     }
@@ -36,7 +36,7 @@ class CustomListViewController {
     return _state!.loadMore(offset: offset);
   }
 
-  dispose() {
+  void dispose() {
     _state = null;
   }
 }
